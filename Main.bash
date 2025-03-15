@@ -3,24 +3,22 @@ clear # LIMPIA LA CONSOLA :)
 
 # Unidades
 unidades=("cero" "uno" "dos" "tres" "cuatro" "cinco" "seis" "siete" "ocho" "nueve")
-# Dieces especiales
+# Dieces..
 dieces=("diez" "once" "doce" "trece" "catorce" "quince" "dieciséis" "diecisiete" "dieciocho" "diecinueve")
 # Decenas
 decenas=("" "diez" "veinte" "treinta" "cuarenta" "cincuenta" "sesenta" "setenta" "ochenta" "noventa")
 # Centenas
 centenas=("" "cien" "doscientos" "trescientos" "cuatrocientos" "quinientos" "seiscientos" "setecientos" "ochocientos" "novecientos")
-# Miles y millones
+# Miles y millones pa
 miles=("mil" "un millón" "millones")
 
 convertir_a_texto() {
     local num=$1
     local texto=""
-    
     if (( num == 0 )); then
         echo "cero"
         return
     fi
-
     if (( num >= 1000000 )); then
         millones=$(( num / 1000000 ))
         if (( millones == 1 )); then
@@ -74,7 +72,7 @@ echo "Ingrese un numero:"
 read number
 
 if ! [[ "$number" =~ ^[0-9]+$ ]] || (( number > 3000000 )); then
-    echo "Por favor, ingrese un número válido entre 0 y 3000000."
+    echo "Please, ingrese un número válido entre 0 y 3000000 :v."
 else
     resultado=$(convertir_a_texto $number)
     echo "El número $number en texto es: $resultado"
